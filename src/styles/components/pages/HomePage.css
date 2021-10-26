@@ -1,0 +1,207 @@
+main {
+    padding: 1% 3% 3% 3%;
+  }
+  .division {
+    display: block;
+    border-top: 1px solid #78787b;
+    width: 20%;
+    margin: 8px auto;
+    
+    transition: all .6s ease-in-out;
+  }
+  .division:hover{
+    width: 60%;
+    transition: all .6s ease-in-out;
+  }
+
+.ItemCarrousel{
+    height: 550px;
+}
+/* ESTILOS REDES */
+#redes{
+    display: flex;
+}
+#redes ,ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 1em;
+    padding: 0;
+}
+#redes ,li{
+    transition: all .3s ease-in-out;
+}
+
+.bi{
+    color: #333;
+    font-size: 1.3em;
+}
+.bi:hover{
+    color: #78787b;
+    transition: all .3s ease-in-out;
+}
+
+/* ESTILOS DE ULTIMOS LANZAMIENTOS */
+.ultimoslanzamientos{
+    display: flex;
+    flex-direction: column;
+    height: 900px;
+
+}
+.ultimoslanzamientos ,h4{
+    text-align: center;
+    border-bottom: 0.8px solid #78787b;
+}
+
+.lanzamientos-container{
+    padding: 3%;
+}
+
+.lanzamientoRec{
+    
+    height: 300px;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: static;
+    background: blanchedalmond;
+
+    transition: all .6s ease-in-out;
+
+}
+.lanzamientoRec img{
+    object-fit: scale-down;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+
+    transition: all .6s ease-in-out;
+
+}
+.infoLanzRec {
+    border: 0.1em solid black;
+    text-align: center;
+    background: whitesmoke;
+    
+}
+.infoLanzRec p{
+    font-size: small;
+}
+.lanzamientoRec:hover{
+    cursor: pointer;
+}
+.lanzamientoRec:hover .division{
+    width: 60%;
+}
+
+/* ESTILOS ULTIMAS NOVEDADES */
+.ultimasnovedades-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: static;
+    margin: 3%;
+    background: url('../../../images/texturaamp.jpg'); 
+    /* width: 100%;  */
+    height: 500px; 
+    background-size: cover; 
+    margin-bottom: 1em;
+    
+}
+.ultimasnovedades-container h4{
+    color: white;
+}
+.contenidonovedades{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: static;
+    height: 320px;
+    padding: 0.5em;
+    box-sizing: border-box;
+    border: 1px solid white;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: blanchedalmond;
+
+    transition: all .6s ease-in-out;
+    
+}
+
+.contenidonovedades img{
+    width: auto;
+    height: 60%;
+    margin: auto;
+
+}
+.novedad {
+    padding: 2% 2% 2% 2%;
+    border: 1px solid black;
+
+    text-align: center;
+}
+.novedad em{
+    color: black;
+}
+.novedad p{
+    font-size: small;
+    color: black;
+
+}
+.contenidonovedades:hover{
+    cursor: pointer;
+}
+.contenidonovedades:hover .division{
+    width: 60%;
+}
+
+
+/* ESTILOS EVENTO DEL MES */
+.eventos-container {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    
+    transition: all .6s ease-in-out;
+}
+.contenidoeventos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 1%;
+    padding: 1%;
+    text-align: center;
+    
+    transition: all .6s ease-in-out;
+    
+}
+.contenidoeventos img{
+    width: 25%;
+    height: auto;
+}
+.infoevento {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 50%;
+    border: 1px solid black;
+    padding: 3%;
+}
+.infoevento h4 , h5{
+    font-style: italic;
+}
+.infoevento p{
+    font-size: medium;
+    margin: 2px 0 2px 0;
+}
+.contenidoeventos:hover{
+    cursor: pointer;
+}
+.contenidoeventos:hover .division{
+    width: 60%;
+}
