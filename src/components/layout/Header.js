@@ -3,12 +3,13 @@ import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 
+
 const Header = (props) => {
     return (
         <header>
                             <Navbar bg="light" >
                     <Container>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand href="/">
                         <img
                         alt=""
                         src="images/logolucrecia.svg"

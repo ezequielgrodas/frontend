@@ -1,82 +1,47 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import EventoItem from '../components/eventos/EventoItem';
 import '../styles/components/pages/EventosPage.css'
 
 
 const EventosPage = (props) => {
+    const [loading, setLoading] = useState(false);
+    const [eventos, setEventos] = useState([]);
+
+    useEffect(() => {
+        const cargarEventos = async () => {
+            setLoading(true);
+            const response = await axios.get('http://localhost:3000/api/eventos');
+            setEventos(response.data);
+            setLoading(false)
+        };
+        cargarEventos();
+    }, []);
     return (
         <main>
-        <div className="bannerSeccion">
-          
-            <h5>Eventos</h5>
-          
-        </div>
-        <div className="infoImportanteEventos">
-            <p>Recorda que podes adquirir todas las entradas ingresando a <span><a href="" target="blank">este enlace.</a></span></p>
-    
-        </div>
-        <div className="contenedorEventos">
-            <div className="eventoDelMes">
-                <div className="bannerEventos">
-                    <h5>Evento del mes</h5>
-    
-                </div>
-                <div className="contenedorEventoDelMes">
-                    <div className="contenidoEventoDelMes">
-                        <img src="images/drab majesty carrousel.jpg" alt=""/>
-                        <span className="infoEventoDelMes">
-                            <em>Drab Majesty @Niceto</em>
-                            <div className="division"></div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, consequuntur. Quia inventore, voluptatem saepe soluta facere nulla illum itaque blanditiis. Aut repudiandae saepe non ullam? Ea velit vitae nostrum quae aspernatur est praesentium iure optio ex fuga dolorem odit recusandae in, eveniet dignissimos, ipsum mollitia, sed accusantium unde? Laboriosam, facere.</p>
-                        </span>
-                    </div>
-                </div>
+            <div className="bannerSeccion">
+
+                <h5>Eventos</h5>
+
             </div>
-            <div className="proximosEventos">
-                <div className="bannerEventos">
-                    <h5>Proximos eventos</h5>
-    
-                </div>
-                <div className="proximosEventos-container">
-                    <div className="row">
-                        <div className="col-6">
-                            <div className="cajaEvento">
-                                <img src="images/mbv carrousel.jpg" alt=""/>
-                                <span className="infoEventoProx">
-                                    <em>my bloody valentine</em>
-                                    <div className="division"></div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, magnam? Perspiciatis, totam!</p>
-    
-                                </span>
-    
-                            </div>
-    
-                        </div>
-                        <div className="col-6">
-                            <div className="cajaEvento">
-                                <img src="images/Dead Can Dance carrousel.jpg" alt=""/>
-                                <span className="infoEventoProx">
-                                    <em>Dead Can Dance</em>
-                                    <div className="division"></div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, magnam? Perspiciatis, totam!</p>
-    
-                                </span>
-    
-                            </div>
-    
-                        </div>
-    
-                    </div>
-                
-    
-                </div>
-    
+            <div className="infoImportanteEventos">
+                <p>Recorda que podes adquirir todas las entradas ingresando a <span><a href="https://www.ticketek.com.ar" target="_blank">este enlace.</a></span></p>
+
             </div>
-    
-        </div>
-        
-      </main>
-     
-    
+            <div className="contenedorEventos">
+                {loading ? (
+                    <p>Cargando...</p>
+                ) : (
+                    eventos.map(item => <EventoItem key={item.id}
+                        title={item.titulo} imagen={item.imagen} description={item.descripcion} info={item.info} />).reverse()
+                )}
+
+            </div>
+
+        </main>
+
+
     )
 }
 
